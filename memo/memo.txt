@@ -1,0 +1,14 @@
+Started with run options --seed 48101
+
+
+Progress: |[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[0m[1000D[K[31mERROR[0m["test_invalid_signup_information", UsersSignupTest, 0.7991450000554323]
+ test_invalid_signup_information#UsersSignupTest (0.80s)
+ActionController::UrlGenerationError:         ActionController::UrlGenerationError: No route matches {:action=>"show", :controller=>"users"}, missing required keys: [:id]
+            test/integration/users_signup_test.rb:8:in `block (2 levels) in <class:UsersSignupTest>'
+            test/integration/users_signup_test.rb:7:in `block in <class:UsersSignupTest>'
+
+[32m=[0m[32m=[0m[32m=[0m[32m=[0m|
+
+Finished in 0.80941s
+17 tests, 33 assertions, [31m0 failures, 1 errors, [0m[33m0 skips[0m
+]2;[Minitest results] 17 tests
