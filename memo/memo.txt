@@ -1,40 +1,6 @@
-.//app/controllers/users_controller.rb:    @user = User.find(params[:id])
-.//app/controllers/users_controller.rb:    @user = User.new
-.//app/controllers/users_controller.rb:    @user = User.new(user_params)
-.//app/controllers/users_controller.rb:    if @user.save
-.//app/controllers/users_controller.rb:      redirect_to user_url(@user)
-.//app/controllers/users_controller.rb:  def user_params
-.//app/controllers/users_controller.rb:    params.require(:user).permit(:name, :email, :password, :password_confirmation)
-.//app/controllers/sessions_controller.rb:    user = User.find_by(email:(params[:session][:email]).downcase)
-.//app/controllers/sessions_controller.rb:    if user && user.authenticate(params[:session][:password])
-.//app/controllers/sessions_controller.rb:      log_in user
-.//app/controllers/sessions_controller.rb:      redirect_to user
-.//app/views/shared/_error_messages.html.erb:<% if @user.errors.any? %>
-.//app/views/shared/_error_messages.html.erb:      The form contains <%= pluralize(@user.errors.count, "error") %>
-.//app/views/shared/_error_messages.html.erb:      <% @user.errors.full_messages.each do |msg| %>
-.//app/views/sessions/new.html.erb:  <p>New user? <%= link_to "Sign up now!", signup_path %></p>
-.//app/views/users/show.html.erb:<% provide(:title, @user.name) %>
-.//app/views/users/show.html.erb:    <sectin class="user_info">
-.//app/views/users/show.html.erb:        <%= gravatar_for @user %>
-.//app/views/users/show.html.erb:        <%= @user.name %>
-.//app/views/users/new.html.erb:    <%=form_for(@user, url: signup_path) do |f| %>
-.//app/assets/stylesheets/custom.scss:  section.user_info {
-.//app/helpers/users_helper.rb:  def gravatar_for(user, size: 80)
-.//app/helpers/users_helper.rb:    gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
-.//app/helpers/users_helper.rb:    image_tag(gravatar_url, alt: user.name, class: "gravatar")
-.//app/helpers/sessions_helper.rb:  def log_in(user)
-.//app/helpers/sessions_helper.rb:    session[:user_id] = user.id
-.//config/routes.rb:  get 'users/new'
-.//config/routes.rb:  get  '/signup',  to: 'users#new'
-.//config/routes.rb:  post '/signup',  to: 'users#create'
-.//config/routes.rb:  resources :users
-.//config/database.yml:  username: root
-.//config/database.yml:#   DATABASE_URL="mysql2://myuser:mypass@localhost/somedatabase"
-.//config/database.yml:  username: Tutorial
-.//db/schema.rb:    t.integer "user_id"
-.//db/schema.rb:  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-.//db/schema.rb:    t.index ["email"], name: "index_users_on_email", unique: true
-.//db/migrate/20190301105729_create_users.rb:    create_table :users do |t|
-.//db/migrate/20190303094044_add_index_to_users_email.rb:    add_index :users, :email, unique: true
-.//db/migrate/20190303095123_add_password_digest_to_users.rb:    add_column :users, :password_digest, :string
-Binary file .//.git/index matches
+test/integration/users_signup_test.rb:      post users_path, params: { user: { name:  "",
+test/integration/users_edit_test.rb:    assert session[:forwarding_url].nil?
+test/integration/users_index_test.rb:    @user = users(:michael)
+test/models/user_test.rb:    valid_addresses = %w[user@example.com USER@foo.COM A_US-ER@foo.bar.org
+test/controllers/users_controller_test.rb:    patch user_path(@user), params: { user: { name: @user.name,
+test/helpers/sessions_helper_test.rb:    @user = users(:michael)
